@@ -4,11 +4,12 @@ while want_infinite_speed != "y" and want_infinite_speed != "n":
     want_infinite_speed = input("Do you want to draw lines as fast as possible? (y/n): ")
     if want_infinite_speed != "y" and want_infinite_speed != "n":
         print("That's not a valid answer")
-if want_infinite_speed == "y":
+if want_infinite_speed == "n":
     try:
         fps = int(input("How many lines per second do you want to produce?: "))
     except ValueError:
         print("That's not an integer!")
+
 
 def main():
     import pygame
@@ -38,7 +39,9 @@ def main():
     pygame.init()
     clock = pygame.time.Clock()
     pygame.display.set_caption('Infinite triangle')
-    if want_infinite_speed == "y":
+
+
+    if want_infinite_speed == "n":
         while True:
 
             for event in pygame.event.get():
@@ -66,6 +69,7 @@ def main():
             
             pygame.display.update()
             clock.tick(fps)
+            
     else:
         while True:
 
