@@ -12,8 +12,8 @@ HEIGHT = 1080
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 
 clock = pygame.time.Clock()
-fps = 5
-iterations = 0
+fps = 60
+iterations = 1
 
 
 left_triangle = [(495,150),(45,HEIGHT-150), ((WIDTH/2) -45, HEIGHT -150)]
@@ -49,5 +49,5 @@ while True:
     gfxdraw.pixel(WIN, int(current_coordinates[0] + (WIDTH / 2)), current_coordinates[1], WHITE)
 
     pygame.display.update()
-    # clock.tick(fps)
+    clock.tick(fps)
             
